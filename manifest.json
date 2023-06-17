@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Text Copy Extension",
+  "version": "1.0",
+  "description": "Copy selected text and log it to the console",
+  "permissions": ["contextMenus"],
+  "action": {
+    "default_icon": {
+      "16": "icon-16.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon-16.png"
+  }
+}
