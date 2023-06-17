@@ -52,70 +52,70 @@ chrome.runtime.onInstalled.addListener(function () {
 chrome.contextMenus.onClicked.addListener(function (info) {
   if (info.menuItemId === "copyText") {
     let selectedText = info.selectionText;
-    let medicalInsurance = extractMedicalInsurance(selectedText);
-    let countryRegion = extractCountryRegion(selectedText);
-    let revenue = extractRevenue(selectedText);
-    let companySales = extractCompanySales(selectedText);
-    let entityType = extractEntityType(selectedText);
-    let sicCode = extractSicCode(selectedText);
-    let sicDescription = extractSicDescription(selectedText);
-    let zipCode = extractZipCode(selectedText);
-    let state = extractState(selectedText);
-    let city = extractCity(selectedText);
+    let mis = extractForm(selectedText);
+    let first_name = extractFirstName(selectedText);
+    let last_name = extractLastName(selectedText);
+    let contact_no = extractContactNumber(selectedText);
+    let alternate_no = extractAlternateNumber(selectedText);
+    let Email = extractEmailAddress(selectedText);
+    let company_name = extractCompanyName(selectedText);
+    let website_url = extractWebsiteURL(selectedText);
     let address = extractAddress(selectedText);
-    let websiteURL = extractWebsiteURL(selectedText);
-    let companyName = extractCompanyName(selectedText);
-    let emailAddress = extractEmailAddress(selectedText);
-    let alternateNumber = extractAlternateNumber(selectedText);
-    let contactNumber = extractContactNumber(selectedText);
-    let lastName = extractLastName(selectedText);
-    let firstName = extractFirstName(selectedText);
-    let form = extractForm(selectedText);
+    let city = extractCity(selectedText);
+    let state = extractState(selectedText);
+    let zip = extractZipCode(selectedText);
+    let sic_desc = extractSicDescription(selectedText);
+    let sic_code = extractSicCode(selectedText);
+    let entity_type = extractEntityType(selectedText);
+    let company_sale = extractCompanySales(selectedText);
+    let revenue = extractRevenue(selectedText);
+    let country = extractCountryRegion(selectedText);
+    let medical_ins = extractMedicalInsurance(selectedText);
 
-    if (form) {
-      console.log("Sir Name:", form);
+    if (mis) {
+      console.log("Sir Name:", mis);
     } else {
       console.log("No Sir Name found in the selected text.");
     }
 
-    if (firstName) {
-      console.log("First Name:", firstName);
+    if (first_name) {
+      console.log("First Name:", first_name);
     } else {
       console.log("No First Name found in the selected text.");
     }
 
-    if (lastName) {
-      console.log("Last Name:", lastName);
+    if (last_name) {
+      console.log("Last Name:", last_name);
     } else {
       console.log("No Last Name found in the selected text.");
     }
 
-    if (contactNumber) {
-      console.log("Contact Number:", contactNumber);
+    if (contact_no) {
+      console.log("Contact Number:", contact_no);
     } else {
       console.log("No Contact Number found in the selected text.");
     }
 
-    if (alternateNumber) {
-      console.log("Alternate Number:", alternateNumber);
+    if (alternate_no) {
+      console.log("Alternate Number:", alternate_no);
     } else {
       console.log("No Alternate Number found in the selected text.");
     }
 
-    if (emailAddress) {
-      console.log("Email Address:", emailAddress);
+    if (Email) {
+      console.log("Email Address:", Email);
     } else {
       console.log("No Email Address found in the selected text.");
     }
 
-    if (companyName) {
-      console.log("Company Name:", companyName);
+    if (company_name) {
+      console.log("Company Name:", company_name);
     } else {
       console.log("No company name found in the selected text.");
     }
 
-    if (websiteURL) {
-      console.log("Website URL:", websiteURL);
+    if (website_url) {
+      console.log("Website URL:", website_url);
     } else {
       console.log("No website URL found in the selected text.");
     }
@@ -138,32 +138,32 @@ chrome.contextMenus.onClicked.addListener(function (info) {
       console.log("No State found in the selected text.");
     }
 
-    if (zipCode) {
-      console.log("ZIP Code:", zipCode);
+    if (zip) {
+      console.log("ZIP Code:", zip);
     } else {
       console.log("No ZIP code found in the selected text.");
     }
 
-    if (sicDescription) {
-      console.log("SIC Description:", sicDescription);
+    if (sic_desc) {
+      console.log("SIC Description:", sic_desc);
     } else {
       console.log("No SIC description found in the selected text.");
     }
 
-    if (sicCode) {
-      console.log("SIC Code:", sicCode);
+    if (sic_code) {
+      console.log("SIC Code:", sic_code);
     } else {
       console.log("No SIC code found in the selected text.");
     }
 
-    if (entityType) {
-      console.log("Entity Type:", entityType);
+    if (entity_type) {
+      console.log("Entity Type:", entity_type);
     } else {
       console.log("No entity type found in the selected text.");
     }
 
-    if (companySales) {
-      console.log("Company Sales:", companySales);
+    if (company_sale) {
+      console.log("Company Sales:", company_sale);
     } else {
       console.log("No company sales found in the selected text.");
     }
@@ -174,14 +174,14 @@ chrome.contextMenus.onClicked.addListener(function (info) {
       console.log("No revenue found in the selected text.");
     }
 
-    if (countryRegion) {
-      console.log("Country/Region:", countryRegion);
+    if (country) {
+      console.log("Country/Region:", country);
     } else {
       console.log("No country/region found in the selected text.");
     }
 
-    if (medicalInsurance) {
-      console.log("Medical Insurance:", medicalInsurance);
+    if (medical_ins) {
+      console.log("Medical Insurance:", medical_ins);
     } else {
       console.log("No medical insurance found in the selected text.");
     }
