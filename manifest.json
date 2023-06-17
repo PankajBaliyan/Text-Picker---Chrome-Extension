@@ -1,18 +1,24 @@
 {
   "manifest_version": 3,
-  "name": "Text Copy Extension",
+  "name": "Text to Form Filler Extension",
   "version": "1.0",
-  "description": "Copy selected text and log it to the console",
-  "permissions": ["contextMenus"],
+  "description": "Select text & click on extension, it will auto fill form.",
+  "permissions": ["contextMenus", "scripting"],
+  "host_permissions": ["http://*/*", "https://*/*"],
   "action": {
+    "default_popup": "popup.html",
     "default_icon": {
-      "16": "icon-16.png"
+      "16": "./icon16.png",
+      "48": "./icon32.png",
+      "128": "./icon128.png"
     }
   },
   "background": {
     "service_worker": "background.js"
   },
   "icons": {
-    "16": "icon-16.png"
+    "16": "./icon16.png",
+    "48": "./icon32.png",
+    "128": "./icon128.png"
   }
 }

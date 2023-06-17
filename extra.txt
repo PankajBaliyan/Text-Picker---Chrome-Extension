@@ -1,0 +1,107 @@
+//EXTRA CODE FOR POPUP.JS
+// DETECT NO. OF INPUT FIELDS
+// document.addEventListener("DOMContentLoaded", function () {
+//   let countButton = document.getElementById("countButton");
+//   let result = document.getElementById("result");
+
+//   countButton.addEventListener("click", async function () {
+//     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+//     let count = await chrome.scripting.executeScript({
+//       target: { tabId: tab.id },
+//       function: countInputFields,
+//     });
+//     result.textContent = "Number of input fields: " + count[0].result;
+//     console.log(count[0].result)
+//   });
+// });
+
+// function countInputFields() {
+//   let inputElements = document.getElementsByTagName("input");
+//   return inputElements.length;
+// }
+
+// DETECT NO OF INPUT FIELDS WITH THEIR ID'S
+// document.addEventListener("DOMContentLoaded", function () {
+//   let countButton = document.getElementById("countButton");
+//   let result = document.getElementById("result");
+
+//   countButton.addEventListener("click", async function () {
+//     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+//     let inputFields = await getInputElementIds(tab.id);
+//     let count = inputFields.length;
+//     let ids = inputFields.filter(Boolean);
+//     result.textContent = "Number of input fields: " + count;
+//     console.log("Number of input fields:", count);
+//     console.log("Input field IDs:", ids);
+//   });
+// });
+
+// async function getInputElementIds(tabId) {
+//   return new Promise((resolve) => {
+//     chrome.scripting.executeScript(
+//       {
+//         target: { tabId: tabId },
+//         function: fetchInputFields,
+//       },
+//       (result) => {
+//         let inputFields = result[0]?.result || [];
+//         resolve(inputFields.map((input) => input.id));
+//       }
+//     );
+//   });
+// }
+
+// function fetchInputFields() {
+//   let inputElements = Array.from(document.getElementsByTagName("input"));
+//   let inputFields = inputElements.map((input) => ({ id: input.id }));
+//   return inputFields;
+// }
+
+
+================================================================================================================
+================================================================================================================
+================================================================================================================
+
+//EXTRA CODE FOR background.JS
+// IT RETURN ALL DATA
+
+// chrome.runtime.onInstalled.addListener(function () {
+//   chrome.contextMenus.create({
+//     id: "copyText",
+//     title: "Copy and Log Selected Text",
+//     contexts: ["selection"],
+//   });
+// });
+
+// chrome.contextMenus.onClicked.addListener(function (info) {
+//   if (info.menuItemId === "copyText") {
+//     let selectedText = info.selectionText;
+//     console.log("Selected text:", selectedText);
+//   }
+// });
+
+// IT RETURN EMAIL
+// chrome.runtime.onInstalled.addListener(function () {
+//   chrome.contextMenus.create({
+//     id: "copyText",
+//     title: "Copy and Log Selected Text",
+//     contexts: ["selection"],
+//   });
+// });
+
+// chrome.contextMenus.onClicked.addListener(function (info) {
+//   if (info.menuItemId === "copyText") {
+//     let selectedText = info.selectionText;
+//     let emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/g;
+//     let emails = selectedText.match(emailRegex);
+
+//     if (emails && emails.length > 0) {
+//       console.log("Emails found:");
+//       for (let i = 0; i < emails.length; i++) {
+//         console.log(emails[i]);
+//       }
+//     } else {
+//       console.log("No emails found in the selected text.");
+//     }
+//   }
+// });
